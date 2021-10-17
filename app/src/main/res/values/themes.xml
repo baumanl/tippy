@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Tippy" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/primaryorange</item>
+        <item name="colorPrimary">@color/darkBlue</item>
         <item name="colorPrimaryVariant">@color/secondaryBlue</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -12,6 +12,6 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="android:colorBackground">@color/backgroundblue</item>
+        <item name="android:colorBackground">@color/white</item>
     </style>
 </resources>

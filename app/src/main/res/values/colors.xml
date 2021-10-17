@@ -8,7 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primaryorange">#C27A4F</color>
-    <color name="backgroundblue">#B0D4D4</color>
+    <color name="darkBlue">#21023D</color>
+    <color name="lightBlue">#B0D4D4</color>
     <color name="secondaryBlue">#519191</color>
 
     <color name="worst">#DC1E0B</color>

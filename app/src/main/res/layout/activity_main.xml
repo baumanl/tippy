@@ -11,7 +11,7 @@
         android:id="@+id/tvBaseLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
         android:text="Base"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -36,7 +36,7 @@
         android:layout_marginTop="56dp"
         android:text="Tip"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toEndOf="@+id/tvBaseLabel"
+        app:layout_constraintEnd_toEndOf="@+id/tvTipPercentageLabel"
         app:layout_constraintTop_toBottomOf="@+id/tvTipPercentageLabel" />
 
     <TextView
@@ -46,7 +46,7 @@
         android:layout_marginTop="32dp"
         android:text="Total"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toEndOf="@+id/tvBaseLabel"
+        app:layout_constraintEnd_toEndOf="@+id/tvTipLabel"
         app:layout_constraintTop_toBottomOf="@+id/tvTipLabel" />
 
     <!-- views on the right side -->
@@ -116,4 +116,67 @@
         app:layout_constraintStart_toStartOf="@+id/seekBarTip"
         app:layout_constraintTop_toBottomOf="@+id/seekBarTip"
         tools:text="acceptable" />
+
+    <Switch
+        android:id="@+id/sSplit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:switchTextAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Split bill?"
+        app:layout_constraintStart_toStartOf="@+id/tvTotalAmount"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalAmount" />
+
+    <EditText
+        android:id="@+id/etPartySize"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="1"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPartySize"
+        app:layout_constraintStart_toEndOf="@+id/tvPartySize"
+        app:layout_constraintTop_toTopOf="@+id/tvPartySize"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvPartySize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Party size:"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/sSplit"
+        app:layout_constraintTop_toBottomOf="@+id/sSplit"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvPerPersonTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/tvPartySize"
+        app:layout_constraintStart_toStartOf="@+id/tvPartySize"
+        app:layout_constraintTop_toBottomOf="@+id/tvPartySize"
+        tools:text="25"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvPerPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="per person"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/tvPerPersonTotal"
+        app:layout_constraintTop_toBottomOf="@+id/etPartySize"
+        tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>
