@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                 tvTipPercentageLabel.text = "$progress%"
                 computeTipAndTotal()
                 updateTipDescription(progress)
+                updateSplitInfo()
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {}
@@ -68,6 +69,7 @@ class MainActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
                 Log.i(TAG, "afterTextChanged $s")
                 computeTipAndTotal()
+                updateSplitInfo()
             }
 
         })
@@ -99,17 +101,21 @@ class MainActivity : AppCompatActivity() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun afterTextChanged(p0: Editable?) {
-                if (tvTotalAmount.text.isEmpty() || etPartySize.text.isEmpty()) {
-                    tvPerPersonTotal.text = ""
-                    return
-                }
-                var total = tvTotalAmount.text.toString().toDouble()
-                var partySize = etPartySize.text.toString().toInt()
-                var res = total / partySize
-                tvPerPersonTotal.text = "%.2f".format(res)
+                updateSplitInfo()
             }
 
         })
+    }
+
+    private fun updateSplitInfo() {
+        if (tvTotalAmount.text.isEmpty() || etPartySize.text.isEmpty()) {
+            tvPerPersonTotal.text = ""
+            return
+        }
+        var total = tvTotalAmount.text.toString().toDouble()
+        var partySize = etPartySize.text.toString().toInt()
+        var res = total / partySize
+        tvPerPersonTotal.text = "%.2f".format(res)
     }
 
     private fun updateTipDescription(tipPercent: Int) {
